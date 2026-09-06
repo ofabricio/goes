@@ -1,0 +1,78 @@
+{
+    "name": "Goes AST",
+    "scopeName": "source.goes.ast",
+    "patterns": [
+        {
+            "include": "#nodeLabels"
+        },
+        {
+            "include": "#nodeNames"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#delimiters"
+        }
+    ],
+    "repository": {
+        "nodeLabels": {
+            "patterns": [
+                {
+                    "name": "entity.name.tag.goes.ast",
+                    "match": "^\\s*[A-Z][A-Za-z0-9_]*(?=:)"
+                }
+            ]
+        },
+        "nodeNames": {
+            "patterns": [
+                {
+                    "name": "variable.other.goes.ast",
+                    "match": "(?<=:\\s)[A-Za-z_][A-Za-z0-9_]*"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.goes.ast",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.goes.ast",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.goes.ast",
+                    "match": "\\b\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        },
+        "delimiters": {
+            "patterns": [
+                {
+                    "name": "punctuation.definition.begin.goes.ast",
+                    "match": "\\["
+                },
+                {
+                    "name": "punctuation.definition.end.goes.ast",
+                    "match": "\\]"
+                },
+                {
+                    "name": "punctuation.separator.key-value.goes.ast",
+                    "match": ":"
+                }
+            ]
+        }
+    }
+}

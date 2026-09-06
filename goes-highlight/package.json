@@ -1,0 +1,48 @@
+{
+    "name": "goes-syntax",
+    "displayName": "Goes Syntax",
+    "description": "Syntax highlighting for the Goes programming language",
+    "version": "0.0.1",
+    "publisher": "ofabricio",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "goes",
+                "aliases": [
+                    "Goes",
+                    "goes"
+                ],
+                "extensions": [
+                    ".goes"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "goes-ast",
+                "aliases": [
+                    "Goes AST",
+                    "goes-ast"
+                ],
+                "extensions": [
+                    ".goes.ast"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "goes",
+                "scopeName": "source.goes",
+                "path": "./goes.json"
+            },
+            {
+                "language": "goes-ast",
+                "scopeName": "source.goes.ast",
+                "path": "./goes-ast.json"
+            }
+        ]
+    }
+}

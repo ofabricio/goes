@@ -1,0 +1,9 @@
+pkg main
+
+use "go:fmt"
+use "go:github.com/ofabricio/nom"
+
+func main() {
+}
+
+type Compiler ()

@@ -1,0 +1,7 @@
+Package: main [
+    Import: "go:fmt"
+    Import: "go:github.com/ofabricio/nom"
+    Function: main [
+    ]
+    Type: Compiler
+]

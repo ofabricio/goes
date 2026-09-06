@@ -1,0 +1,133 @@
+{
+    "name": "Goes",
+    "scopeName": "source.goes",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#captures"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#numbers"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.goes",
+                    "match": "//.*$"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.goes",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.goes",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.goes",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.goes",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.struct.goes",
+                    "match": "\\b(if|else|for|ret|type|func|pkg|range|var|use)\\b"
+                },
+                {
+                    "name": "keyword.control.goes",
+                    "match": "&|\\||\\*"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.goes",
+                    "match": "\\b(true|false|nil)\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "entity.name.type.goes",
+                    "match": "\\b(str|int|bool|rune|error|byte)\\b"
+                },
+                {
+                    "name": "entity.name.type.class.goes",
+                    "match": "(?<=type\\s)[A-Z][A-Za-z0-9_]*|(?<=func\\s\\(\\*?)\\w+\\)"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.goes",
+                    "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*(?=\\s*\\()"
+                }
+            ]
+        },
+        "captures": {
+            "patterns": [
+                {
+                    "name": "variable.other.goes",
+                    "match": "(?<!:):[a-zA-Z_][a-zA-Z0-9_]*"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.goes",
+                    "match": ":=|\\?|\\+|-|/|==|!=|<=|>=|<|>"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.goes",
+                    "match": "\\b\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        }
+    }
+}
